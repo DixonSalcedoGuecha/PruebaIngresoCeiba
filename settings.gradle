@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Prueba de Ingreso Ceiba"
-include ':app'
+include ':presentation'
 include ':domain'
 include ':infrastructure'
