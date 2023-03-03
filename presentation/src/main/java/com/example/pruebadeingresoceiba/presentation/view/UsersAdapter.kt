@@ -1,9 +1,10 @@
-package com.example.pruebadeingresoceiba.view
+package com.example.pruebadeingresoceiba.presentation.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pruebadeingresoceiba.R
+import com.example.pruebadeingresoceiba.data.model.UserResponse
 
 class UsersAdapter(private val usersListProvider: List<UserResponse>, private val onClickListener: (UserResponse) -> Unit) : RecyclerView.Adapter<UserViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
