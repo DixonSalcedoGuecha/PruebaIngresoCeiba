@@ -9,7 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pruebadeingresoceiba.databinding.ActivityMainBinding
 import com.example.pruebadeingresoceiba.data.model.UserResponse
-import com.example.pruebadeingresoceiba.data.model.UsersListProvider
+import com.example.pruebadeingresoceiba.domain.model.UserItem
 import com.example.pruebadeingresoceiba.presentation.viewmodel.UsersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val usersViewModel: UsersViewModel by viewModels()
-    private var listUsers = emptyList<UserResponse>()
+    private var listUsers = emptyList<UserItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.rcvUsers.adapter = UsersAdapter(
             listUsers
-        ) { userResponse -> onItemSelected(userResponse) }
+        ) { userItem -> onItemSelected(userItem) }
     }
 
-    private fun onItemSelected(userResponse: UserResponse){
-        Toast.makeText(this, userResponse.name, Toast.LENGTH_SHORT).show()
+    private fun onItemSelected(userItem: UserItem){
+        Toast.makeText(this, userItem.name, Toast.LENGTH_SHORT).show()
     }
 }

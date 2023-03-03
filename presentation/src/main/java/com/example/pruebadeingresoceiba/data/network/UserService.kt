@@ -5,14 +5,17 @@ import com.example.pruebadeingresoceiba.data.model.UserResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.create
+import javax.inject.Inject
 
-class UserService {
+class UserService @Inject constructor(
+    private val retrofit : UserApiClient
+) {
 
-    private val retrofit = RetrofitHelper.getRetrofit()
+
 
     suspend fun getUsers(): List<UserResponse> {
         return withContext(Dispatchers.IO) {
-            val response = retrofit.create(UserApiClient::class.java).getAllUsers()
+            val response = retrofit.getAllUsers()
             response.body() ?: emptyList()
         }
     }
