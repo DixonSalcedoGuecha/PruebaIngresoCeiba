@@ -3,7 +3,6 @@ package com.example.pruebadeingresoceiba.presentation.view.viewholders
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pruebadeingresoceiba.databinding.ItemUsersBinding
-import com.example.pruebadeingresoceiba.data.model.UserResponse
 import com.example.pruebadeingresoceiba.domain.model.UserItem
 
 class UserViewHolder( view: View): RecyclerView.ViewHolder(view) {

@@ -1,5 +1,6 @@
 package com.example.pruebadeingresoceiba.data.network
 
+import android.util.Log
 import com.example.pruebadeingresoceiba.data.model.UserResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -10,9 +11,13 @@ class UserService @Inject constructor(
 ) {
 
     suspend fun getUsers(): List<UserResponse> {
-        return withContext(Dispatchers.IO) {
-            val response = retrofit.getAllUsers()
-            response.body() ?: emptyList()
+         return withContext(Dispatchers.IO) {
+             val response = retrofit.getAllUsers()
+             if(retrofit.getAllUsers().isSuccessful){
+                 response.body() ?: emptyList()
+             } else {
+                 emptyList()
+             }
         }
     }
 }

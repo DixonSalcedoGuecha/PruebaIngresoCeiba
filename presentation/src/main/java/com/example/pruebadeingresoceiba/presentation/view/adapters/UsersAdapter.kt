@@ -8,7 +8,7 @@ import com.example.pruebadeingresoceiba.domain.model.PostItem
 import com.example.pruebadeingresoceiba.domain.model.UserItem
 import com.example.pruebadeingresoceiba.presentation.view.viewholders.UserViewHolder
 
-class UsersAdapter(private val userItemList: List<UserItem>, private val onClickListener: (UserItem) -> Unit) : RecyclerView.Adapter<UserViewHolder>() {
+class UsersAdapter(private var userItemList: List<UserItem>, private val onClickListener: (UserItem) -> Unit) : RecyclerView.Adapter<UserViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
 
@@ -22,5 +22,10 @@ class UsersAdapter(private val userItemList: List<UserItem>, private val onClick
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val item = userItemList[position]
         holder.render(item, onClickListener)
+    }
+
+    fun updateUsers(userList: List<UserItem>){
+        this.userItemList = userList
+        notifyDataSetChanged()
     }
 }

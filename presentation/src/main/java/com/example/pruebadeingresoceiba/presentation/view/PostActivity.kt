@@ -1,5 +1,6 @@
 package com.example.pruebadeingresoceiba.presentation.view
 
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -32,13 +33,35 @@ class PostActivity : AppCompatActivity() {
         var userItem: UserItem? = null
 
         if(getBundle != null){
+
             userItem  = getBundle.getSerializable("user") as UserItem?
+
             binding.cellUser.text = userItem?.phone
             binding.nameUser.text = userItem?.name
             binding.mailUser.text = userItem?.email
             postViewModel._idUser.value = userItem?.id
         }
+        if (connectedValidate()){
+            initViewModels()
+        } else {
+            initViewModelsWithoutConnection()
+        }
 
+    }
+
+    private fun initViewModelsWithoutConnection() {
+        postViewModel.withoutConnection()
+        postViewModel.postList.observe(this, Observer {
+
+            postList = it ?: emptyList()
+            initRecyclerView()
+        })
+        postViewModel.isLoading.observe(this, Observer {
+            binding.progress.isVisible = it
+        })
+    }
+
+    private fun initViewModels() {
         postViewModel.onCreate()
         postViewModel.postList.observe(this, Observer {
 
@@ -48,7 +71,13 @@ class PostActivity : AppCompatActivity() {
         postViewModel.isLoading.observe(this, Observer{
             binding.progress.isVisible = it
         })
+    }
 
+    private fun connectedValidate() : Boolean {
+        val cm = this.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = cm.activeNetworkInfo
+        val isConnected: Boolean = activeNetwork?.isConnectedOrConnecting == true
+        return isConnected
     }
 
     private fun initRecyclerView() {

@@ -25,6 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -44,5 +47,24 @@
         android:layout_marginTop="50dp"
         android:visibility="gone" />
 
+    <ImageView
+        android:id="@+id/img_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_list_empty"/>
+
+    <TextView
+        android:id="@+id/txt_Empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/green_second"
+        android:visibility="gone"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="List Empty"/>
 
 </LinearLayout>

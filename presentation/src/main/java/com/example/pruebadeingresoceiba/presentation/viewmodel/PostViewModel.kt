@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pruebadeingresoceiba.domain.GetPostNotConnetctedUseCase
 import com.example.pruebadeingresoceiba.domain.GetPostUseCase
 import com.example.pruebadeingresoceiba.domain.GetUsersUseCase
 import com.example.pruebadeingresoceiba.domain.model.PostItem
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PostViewModel @Inject constructor(
-    var getPostUseCase: GetPostUseCase
+    var getPostUseCase: GetPostUseCase,
+    var getPostNotConnetctedUseCase: GetPostNotConnetctedUseCase
 ) : ViewModel() {
 
     private val _postList = MutableLiveData<List<PostItem>?>()
@@ -31,13 +33,28 @@ class PostViewModel @Inject constructor(
             if (!result.isNullOrEmpty()) {
                 _postList.postValue(result)
                 _isLoading.postValue(false)
+            } else {
+                _postList.postValue(emptyList())
+                _isLoading.postValue(false)
             }
 
         }
 
     }
 
-    fun setIdUser(id: Int) {
-        _idUser.postValue(id)
+    fun withoutConnection() {
+        viewModelScope.launch {
+            _isLoading.postValue(true)
+            val result = _idUser.value?.let { getPostNotConnetctedUseCase(it) }
+            if (!result.isNullOrEmpty()) {
+                _postList.postValue(result)
+                _isLoading.postValue(false)
+            } else {
+                _postList.postValue(emptyList())
+                _isLoading.postValue(false)
+            }
+
+        }
+
     }
 }
