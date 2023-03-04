@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Prueba de Ingreso</string>
+    <string name="hint_name_user">Leanne Graham</string>
+    <string name="hint_phone_user">1-770-736-8031 x56442</string>
+    <string name="hint_email_user">Sincere@april.biz</string>
+    <string name="hint_search_user">Buscar Usuarios</string>
+    <string name="hint_list_empty">List Empty</string>
+    <string name="hint_title_post">sunt aut facere repellat provident occaecati excepturi optio reprehenderit</string>
+    <string name="hint_body_user">quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto</string>
+    <string name="hint_look_post">VER PUBLICACIONES</string>
 </resources>

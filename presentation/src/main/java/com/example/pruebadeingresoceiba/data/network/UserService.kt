@@ -1,6 +1,5 @@
 package com.example.pruebadeingresoceiba.data.network
 
-import android.util.Log
 import com.example.pruebadeingresoceiba.data.model.UserResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
