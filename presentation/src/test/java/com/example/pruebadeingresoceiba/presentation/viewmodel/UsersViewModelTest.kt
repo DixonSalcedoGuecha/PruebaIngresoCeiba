@@ -1,7 +1,7 @@
 package com.example.pruebadeingresoceiba.presentation.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.pruebadeingresoceiba.domain.GetUsersUseCase
+import com.example.pruebadeingresoceiba.domain.usescases.GetUsersUseCase
 import com.example.pruebadeingresoceiba.domain.model.PostItem
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery

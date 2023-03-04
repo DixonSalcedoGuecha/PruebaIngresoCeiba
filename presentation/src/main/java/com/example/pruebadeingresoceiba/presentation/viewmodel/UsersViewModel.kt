@@ -3,8 +3,8 @@ package com.example.pruebadeingresoceiba.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.pruebadeingresoceiba.domain.GetUsersNotConnectedUseCase
-import com.example.pruebadeingresoceiba.domain.GetUsersUseCase
+import com.example.pruebadeingresoceiba.domain.usescases.GetUsersNotConnectedUseCase
+import com.example.pruebadeingresoceiba.domain.usescases.GetUsersUseCase
 import com.example.pruebadeingresoceiba.domain.model.UserItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

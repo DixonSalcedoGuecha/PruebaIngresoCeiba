@@ -1,6 +1,7 @@
 package com.example.pruebadeingresoceiba.domain
 
 import com.example.pruebadeingresoceiba.data.UserRepository
+import com.example.pruebadeingresoceiba.domain.usescases.GetUsersUseCase
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify

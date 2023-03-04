@@ -1,7 +1,6 @@
-package com.example.pruebadeingresoceiba.domain
+package com.example.pruebadeingresoceiba.domain.usescases
 
 import com.example.pruebadeingresoceiba.data.UserRepository
-import com.example.pruebadeingresoceiba.data.database.entities.toDataBase
 import com.example.pruebadeingresoceiba.domain.model.UserItem
 import javax.inject.Inject
 
