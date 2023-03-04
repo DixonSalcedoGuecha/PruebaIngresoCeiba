@@ -34,6 +34,7 @@ class UsersActivity : AppCompatActivity() {
         } else {
             initViewModelsWithoutConnection()
         }
+        binding.txtConection.isVisible = !connectedValidate()
 
 
         binding.searchUsers.addTextChangedListener { nameUser ->
