@@ -30,50 +30,31 @@ tools:context=".presentation.view.UsersActivity">
             android:paddingStart="14dp">
 
             <TextView
-                android:id="@+id/name_user"
+                android:id="@+id/title_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Leanne Graham"
+                android:layout_gravity="center|top"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
+                android:text="sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
                 android:textColor="@color/green_second"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/cell_user"
+                android:id="@+id/body_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/black"
-                android:drawableStart="@drawable/ic_call"
-                android:drawablePadding="8dp"
-                android:text="1-770-736-8031 x56442"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/mail_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"
-                android:layout_marginBottom="20dp"
-                android:drawableStart="@drawable/ic_mail"
-                android:drawablePadding="8dp"
-                android:text="Sincere@april.biz"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/txt_see_publications"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|right"
-                android:text="VER PUBLICACIONES"
-                android:textColor="@color/green_second"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
-                android:layout_marginEnd="12dp"
-                android:padding="8dp"/>
+                android:textColor="@color/black"
+                android:drawablePadding="8dp"
+                android:text="quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+                android:textSize="18sp" />
+
+
         </LinearLayout>
 
 

@@ -24,4 +24,8 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideUserDao(db: CeibaDataBase) = db.getUserDao()
+
+    @Singleton
+    @Provides
+    fun providePostDao(db: CeibaDataBase) = db.getPostDao()
 }

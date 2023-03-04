@@ -2,7 +2,7 @@ package com.example.pruebadeingresoceiba.presentation.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.pruebadeingresoceiba.domain.GetUsersUseCase
-import com.example.pruebadeingresoceiba.domain.model.UserItem
+import com.example.pruebadeingresoceiba.domain.model.PostItem
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.RelaxedMockK
@@ -43,8 +43,8 @@ internal class UsersViewModelTest {
     fun `when view model is created at the first time, get all users`() =
         runTest{
         //Given
-        val usersList = listOf(UserItem(1,"Dixon", "dixon@gmail.co", "322 554 848 1" ),
-                           UserItem(2,"Cristian", "cristian@gmail.co", "312 554 848 1" ))
+        val usersList = listOf(PostItem(1,"Dixon", "dixon@gmail.co", "322 554 848 1" ),
+                           PostItem(2,"Cristian", "cristian@gmail.co", "312 554 848 1" ))
 
         coEvery { getUsersUseCase() } returns usersList
 

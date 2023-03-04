@@ -1,28 +1,29 @@
 package com.example.pruebadeingresoceiba.presentation.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pruebadeingresoceiba.databinding.ActivityMainBinding
-import com.example.pruebadeingresoceiba.data.model.UserResponse
+import com.example.pruebadeingresoceiba.databinding.ActivityUsersBinding
 import com.example.pruebadeingresoceiba.domain.model.UserItem
+import com.example.pruebadeingresoceiba.presentation.view.adapters.UsersAdapter
 import com.example.pruebadeingresoceiba.presentation.viewmodel.UsersViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+@AndroidEntryPoint
+class UsersActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityUsersBinding
     private val usersViewModel: UsersViewModel by viewModels()
     private var listUsers = emptyList<UserItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityUsersBinding.inflate(layoutInflater)
         setContentView(binding.root)
         usersViewModel.onCreate()
         usersViewModel.usersList.observe(this, Observer {
@@ -45,6 +46,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onItemSelected(userItem: UserItem){
-        Toast.makeText(this, userItem.name, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, PostActivity::class.java)
+        val bundle = Bundle()
+        bundle.putSerializable("user", userItem)
+        intent.putExtras(bundle)
+        startActivity(intent)
+
     }
 }

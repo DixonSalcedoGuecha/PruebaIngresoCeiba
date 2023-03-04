@@ -1,6 +1,6 @@
 package com.example.pruebadeingresoceiba.core.di
 
-import com.example.pruebadeingresoceiba.data.network.UserApiClient
+import com.example.pruebadeingresoceiba.data.network.ApiClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +22,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideUserApiClient(retrofit: Retrofit): UserApiClient{
-        return  retrofit.create(UserApiClient::class.java)
+    fun provideUserApiClient(retrofit: Retrofit): ApiClient{
+        return  retrofit.create(ApiClient::class.java)
     }
 }
