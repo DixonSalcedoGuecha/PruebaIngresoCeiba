@@ -9,12 +9,8 @@ Tpresentation/src/main/java/com/example/pruebadeingresoceiba/base/CeibaApplicati
 Rpresentation/src/main/java/com/example/pruebadeingresoceiba/core/RetrofitHelper.kt,3\7\37094b0bcedf87a76e5063970b8d11902d4c970c
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-I
-presentation/build.gradle,2\9\29ca4091f3fd866a7d8488b04776c5994c7983b9
 ˜
 hpresentation/src/test/java/com/example/pruebadeingresoceiba/presentation/viewmodel/UsersViewModelTest.kt,b\2\b20ebe32b880003b4cfeb0fcdcd107ddd9823518
-‰
-Ypresentation/src/test/java/com/example/pruebadeingresoceiba/domain/GetUsersUseCaseTest.kt,3\c\3cee72813fd6195ca42ee86329f59667b14e8746
 †
 Vpresentation/src/main/java/com/example/pruebadeingresoceiba/data/model/UserResponse.kt,b\a\ba2aeeae1808df3f83947a7318490796f665fd3a
 

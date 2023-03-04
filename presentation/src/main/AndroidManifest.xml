@@ -16,10 +16,10 @@
         android:theme="@style/Theme.PruebaDeIngresoCeiba"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.view.PostActivity"
+            android:name=".view.PostActivity"
             android:exported="true" />
         <activity
-            android:name=".presentation.view.UsersActivity"
+            android:name=".view.UsersActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
