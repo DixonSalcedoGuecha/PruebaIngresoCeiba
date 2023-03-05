@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pruebadeingresoceiba.databinding.ActivityUsersBinding
 import com.example.domain.model.UserItem
+import com.example.infrastructure.Constants.KEY_SEND_OBJECT
 import com.example.pruebadeingresoceiba.view.adapters.UsersAdapter
 import com.example.pruebadeingresoceiba.viewmodel.UsersViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -95,7 +96,7 @@ class UsersActivity : AppCompatActivity() {
     private fun onItemSelected(userItem: UserItem) {
         val intent = Intent(this, PostActivity::class.java)
         val bundle = Bundle()
-        bundle.putSerializable("user", userItem)
+        bundle.putSerializable(KEY_SEND_OBJECT, userItem)
         intent.putExtras(bundle)
         startActivity(intent)
 

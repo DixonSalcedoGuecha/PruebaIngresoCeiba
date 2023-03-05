@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pruebadeingresoceiba.databinding.ActivityPostBinding
 import com.example.domain.model.PostItem
 import com.example.domain.model.UserItem
+import com.example.infrastructure.Constants.KEY_SEND_OBJECT
 import com.example.pruebadeingresoceiba.view.adapters.PostAdapter
 import com.example.pruebadeingresoceiba.viewmodel.PostViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,7 +35,7 @@ class PostActivity : AppCompatActivity() {
 
         if(getBundle != null){
 
-            userItem  = getBundle.getSerializable("user") as UserItem?
+            userItem  = getBundle.getSerializable(KEY_SEND_OBJECT) as UserItem?
 
             binding.cellUser.text = userItem?.phone
             binding.nameUser.text = userItem?.name
